@@ -16,10 +16,15 @@ public abstract class Conta implements IConta {
 	}
 
 	@Override
-	public void sacar(double valor) {
+	public boolean sacar(double valor) {
+		if(saldo<valor) {
+			
+		return false;
+		}
 		saldo -= valor;
+			return true;
 	}
-
+	
 	@Override
 	public void depositar(double valor) {
 		saldo += valor;
